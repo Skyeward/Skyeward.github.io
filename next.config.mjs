@@ -5,7 +5,6 @@ const nextConfig = {
         unoptimized: true,
         remotePatterns: [{protocol: "https", hostname: 'raw.githubusercontent.com'}],
       },
-    experimental: {},
     distDir: 'out',
     output: 'export',
 };
