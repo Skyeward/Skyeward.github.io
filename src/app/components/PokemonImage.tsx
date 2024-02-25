@@ -10,14 +10,17 @@ const PokemonImage = ({id}: PokemonImageProps) => {
     const [imageUrl, setImageUrl] = useState("");
 
     function fetchImageWrapper (): void {
-        fetchImageById(id).then(url => {setImageUrl(url)});
+        if (id > 0)
+        {
+            fetchImageById(id).then(url => {setImageUrl(url)});
+        }
     };
 
     useEffect(() => {
         fetchImageWrapper();
     }, [])
 
-    if(imageUrl === "")
+    if (imageUrl === "")
     {
         return <>Loading...</>
     }

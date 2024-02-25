@@ -8,7 +8,7 @@ import PokemonImage from "./components/PokemonImage";
 
 
 export default function Home() {
-  const [randomSpeciesIds, setRandomSpeciesIds] = useState<number[]>([]);
+  const [randomSpeciesIds, setRandomSpeciesIds] = useState<number[]>([-1]);
 
   useEffect(() => {
     setRandomSpeciesIds(getRandomSpeciesIds(1, [2, 4]));
