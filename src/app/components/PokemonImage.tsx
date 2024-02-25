@@ -27,7 +27,10 @@ const PokemonImage = ({id}: PokemonImageProps) => {
         return <>Loading...</>
     }
 
-    return (<Image id="pokemon-image" src={imageUrl} alt="random pokemon" width={800} height={800} />)
+    return (<Image id="pokemon-image" src={imageUrl} alt="random pokemon" width={1024} height={1024} style={{
+        //"image-rendering": "-moz-crisp-edges",
+        imageRendering: "-webkit-optimize-contrast"
+    }}/>)
 };
-
+//
 export default PokemonImage;
