@@ -11,7 +11,7 @@ const PokemonImage = ({id}: PokemonImageProps) => {
 
     function fetchImageWrapper (): void {
         console.log(`fetching image with id ${id}`);
-        
+
         if (id > 0)
         {
             fetchImageById(id).then(url => {setImageUrl(url)});
@@ -27,7 +27,7 @@ const PokemonImage = ({id}: PokemonImageProps) => {
         return <>Loading...</>
     }
 
-    return (<Image id="pokemon-image" src={imageUrl} alt="random pokemon" width={100} height={100} />)
+    return (<Image id="pokemon-image" src={imageUrl} alt="random pokemon" width={800} height={800} />)
 };
 
 export default PokemonImage;
