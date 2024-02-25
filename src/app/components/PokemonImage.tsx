@@ -20,7 +20,7 @@ const PokemonImage = ({id}: PokemonImageProps) => {
 
     useEffect(() => {
         fetchImageWrapper();
-    }, [])
+    }, [id])
 
     if (imageUrl === "")
     {
