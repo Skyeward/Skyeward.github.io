@@ -4,6 +4,7 @@ const nextConfig = {
         remotePatterns: [{protocol: "https", hostname: 'raw.githubusercontent.com'}],
       },
     output: 'export',
+    distDir: 'build',
 };
 
 export default nextConfig;
