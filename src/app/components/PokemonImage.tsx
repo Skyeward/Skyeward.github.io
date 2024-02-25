@@ -10,9 +10,10 @@ const PokemonImage = ({id}: PokemonImageProps) => {
     const [imageUrl, setImageUrl] = useState("");
 
     function fetchImageWrapper (): void {
+        console.log(`fetching image with id ${id}`);
+        
         if (id > 0)
         {
-            console.log(`fetching image with id ${id}`);
             fetchImageById(id).then(url => {setImageUrl(url)});
         }
     };
