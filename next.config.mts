@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+import { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+    experimental: {},
     images: {
         unoptimized: true,
         remotePatterns: [{protocol: "https", hostname: 'raw.githubusercontent.com'}],
