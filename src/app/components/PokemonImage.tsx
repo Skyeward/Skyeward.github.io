@@ -9,14 +9,15 @@ type PokemonImageProps = {
 const PokemonImage = ({id}: PokemonImageProps) => {
     const [imageUrl, setImageUrl] = useState("");
 
-    const fetchImageWrapper = () => {
+    function fetchImageWrapper (): void {
         fetchImageById(id).then(url => {setImageUrl(url)});
     };
 
     useEffect(() => {
         fetchImageWrapper();
     }, [])
-    if(imageUrl == "")
+
+    if(imageUrl === "")
     {
         return <>Loading...</>
     }
