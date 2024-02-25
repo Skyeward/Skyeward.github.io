@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import { useEffect, useState } from "react";
 
 import { getRandomSpeciesIds } from "./functions/getRandomSpeciesIds";
-import PokemonImage from "./components/PokemonImage";
+import PokemonCollage from "./components/PokemonCollage";
 
 
 export default function Home() {
@@ -17,6 +17,6 @@ export default function Home() {
   }, [])
   
   return (
-      <PokemonImage id={randomSpeciesIds[0]} />
+      <PokemonCollage randomIds={randomSpeciesIds} />
   );
 }
