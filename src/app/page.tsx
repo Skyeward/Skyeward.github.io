@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 import { getRandomSpeciesIds } from "./functions/getRandomSpeciesIds";
 import PokemonImage from "./components/PokemonImage";
+import GenerationInputComponent from "./components/GenerationInputComponent";
 
 
 export default function Home() {
@@ -17,6 +18,9 @@ export default function Home() {
   }, [])
   
   return (
+    <>
+      <GenerationInputComponent/>
       <PokemonImage id={randomSpeciesIds[0]} />
+    </>
   );
 }
