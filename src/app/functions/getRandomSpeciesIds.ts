@@ -4,8 +4,11 @@ const lastIdPerGen: number[] = [
 
 
 export const getRandomSpeciesIds = (idCount: number, gensIncluded: number[]): number[] => {
+    console.log(`getting random species ids with count of ${idCount}, for gens ${gensIncluded}`);
+    
     if (idCount < 1 || idCount > 32 || gensIncluded.length < 1)
     {
+        console.log("bad arguments");
         return []; // some simple validation
     }
 
@@ -28,8 +31,11 @@ const getPossibleIds = (gensIncluded: number[]): number[] => {
         {
             possibleIds.push(id);
         }
+
+        console.log(`after checking gen ${gen}, there are ${possibleIds.length} ids available`);
     }
 
+    console.log(`possible ids: ${possibleIds}`);
     return possibleIds;
 }
 
@@ -41,8 +47,11 @@ const getRandomIdsFromPossibilities = (idCount: number, possibleIds: number[]): 
     {
         const randomIndex: number = Math.floor(Math.random() * possibleIds.length);
         randomIds.push(possibleIds[randomIndex]);
+        console.log(`new randomId: ${possibleIds[randomIndex]}`);
         possibleIds.splice(randomIndex, 1);
     }
+
+    console.log(`randomIds: ${randomIds}`);
 
     return randomIds;
 }
