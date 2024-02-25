@@ -8,7 +8,7 @@ type RandomIdsProps = {
 
 const PokemonCollage = ({randomIds}: RandomIdsProps) => {
     return (<>
-        {randomIds.map(id => {return (<PokemonImage id={id}/>)})}
+        {randomIds.map((id, index) => {return (<div key={index}><PokemonImage id={id}/></div>)})}
     </>)
 }
 
