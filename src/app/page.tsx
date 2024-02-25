@@ -5,6 +5,6 @@ import PokemonImage from "./components/PokemonImage";
 
 export default function Home() {
   return (
-      <PokemonImage id={4} />
+      <PokemonImage id={15} />
   );
 }
