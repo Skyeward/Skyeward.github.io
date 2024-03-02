@@ -1,4 +1,4 @@
-name: Build Webstie
+name: Build Website
 
 on:
   push:
