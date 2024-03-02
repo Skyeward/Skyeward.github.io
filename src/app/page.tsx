@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import { useEffect, useState } from "react";
 
 import { getRandomSpeciesIds } from "./functions/getRandomSpeciesIds";
+import GenerationInputComponent from "./components/GenerationInputComponent";
 import PokemonCollage from "./components/PokemonCollage";
 
 
@@ -18,6 +19,9 @@ export default function Home() {
   }, [])
   
   return (
+    <>
+      <GenerationInputComponent/>
       <PokemonCollage randomIds={randomSpeciesIds} />
+    </>
   );
 }
