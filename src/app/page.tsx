@@ -12,7 +12,6 @@ export default function Home() {
   const [randomSpeciesIds, setRandomSpeciesIds] = useState<number[]>([-1]);
 
   useEffect(() => {
-    
     console.log("setting random species ids...");
     setRandomSpeciesIds(getRandomSpeciesIds(2, [2, 4]));
     console.log(`random ids set! ${randomSpeciesIds}`)
