@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { fetchImageById } from "../functions/fetchImageById";
+import { getRandomPixelRows } from "../functions/getRandomPixelRows";
 import { useEffect, useState } from "react";
 
 type PokemonImageProps = {
@@ -11,7 +12,7 @@ const PokemonImage = ({id}: PokemonImageProps) => {
 
     function fetchImageWrapper (): void {
         console.log(`fetching image with id ${id}`);
-        
+
         if (id > 0)
         {
             fetchImageById(id).then(url => {setImageUrl(url)});
@@ -27,7 +28,15 @@ const PokemonImage = ({id}: PokemonImageProps) => {
         return <>Loading...</>
     }
 
-    return (<Image id="pokemon-image" src={imageUrl} alt="random pokemon" width={100} height={100} />)
+    const pixelRows: number[] = getRandomPixelRows(id);
+
+    console.log(`For Pokemon ID ${id}, using pixel rows: ${pixelRows}`)
+
+    return (<Image id="pokemon-image" src={imageUrl} alt="random pokemon" width={960} height={960} style={{
+        imageRendering: "pixelated",
+        clipPath: `inset(${10 * pixelRows[0]}px 0px ${10 * (95 - pixelRows[3])}px 0px)`
+    }}/>)
 };
+
 
 export default PokemonImage;
