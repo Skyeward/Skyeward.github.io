@@ -27,9 +27,9 @@ const PokemonImage = ({id}: PokemonImageProps) => {
         return <>Loading...</>
     }
 
-    return (<Image id="pokemon-image" src={imageUrl} alt="random pokemon" width={1024} height={1024} style={{
+    return (<Image id="pokemon-image" src={imageUrl} alt="random pokemon" width={960} height={960} style={{
         imageRendering: "pixelated",
-        clipPath: "inset(46px 0px 0px 46px)"
+        clipPath: "inset(460px 0px 460px 0px)"
     }}/>)
 };
 
