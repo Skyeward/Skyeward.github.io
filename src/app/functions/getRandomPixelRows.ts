@@ -25,6 +25,8 @@ export const getRandomPixelRows = (id: number): number[] => {
 
     const lastAvailableStartRow: number = lastRowWithColours - 3;
     const startRow: number = Math.floor(Math.random() * (lastAvailableStartRow - firstRowWithColours + 1) + firstRowWithColours);
+
+    console.log(`For species ID ${id}, first visible row is ${firstRowWithColours}, last is ${lastRowWithColours}, thus last available starting row is ${lastAvailableStartRow}. Random starting row is ${startRow}.`);
     
     return [startRow, startRow + 1, startRow + 2, startRow + 3];
 }
