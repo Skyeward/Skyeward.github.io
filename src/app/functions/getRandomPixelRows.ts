@@ -1,4 +1,4 @@
-import { transparentPixelsPerRowPerPokemon } from "../constants/transparentPixelsPerRowPerPokemon.ts";
+import { transparentPixelsPerRowPerPokemon } from "../constants/transparentPixelsPerRowPerPokemon";
 
 export const getRandomPixelRows = (id: number): number[] => {
     const transparentPixelsPerRow: number[] = transparentPixelsPerRowPerPokemon[id];
