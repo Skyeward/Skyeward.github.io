@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import { useEffect, useState } from "react";
 
 import { getRandomSpeciesIds } from "./functions/getRandomSpeciesIds";
+import AnswerSubmission from "./components/AnswerSubmission";
 import GenerationInputComponent from "./components/GenerationInputComponent";
 import PokemonCollage from "./components/PokemonCollage";
 
@@ -21,6 +22,7 @@ export default function Home() {
     <>
       <GenerationInputComponent/>
       <PokemonCollage randomIds={randomSpeciesIds} />
+      <AnswerSubmission/>
     </>
   );
 }
