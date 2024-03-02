@@ -31,11 +31,8 @@ const getPossibleIds = (gensIncluded: boolean[]): number[] => {
         {
             possibleIds.push(id);
         }
-
-        console.log(`after checking gen ${gen}, there are ${possibleIds.length} ids available`);
     }
 
-    console.log(`possible ids: ${possibleIds}`);
     return possibleIds;
 }
 
@@ -47,7 +44,6 @@ const getRandomIdsFromPossibilities = (idCount: number, possibleIds: number[]): 
     {
         const randomIndex: number = Math.floor(Math.random() * possibleIds.length);
         randomIds.push(possibleIds[randomIndex]);
-        console.log(`new randomId: ${possibleIds[randomIndex]}`);
         possibleIds.splice(randomIndex, 1);
     }
 
