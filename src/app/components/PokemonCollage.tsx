@@ -7,9 +7,9 @@ type RandomIdsProps = {
 
 
 const PokemonCollage = ({randomIds}: RandomIdsProps) => {
-    return (<>
+    return (<div style={{display: "flex", flexDirection: "column", padding: "0px", gap: 0}}>
         {randomIds.map((id, index) => {return (<div key={index}><PokemonImage id={id}/></div>)})}
-    </>)
+    </div>)
 }
 
 

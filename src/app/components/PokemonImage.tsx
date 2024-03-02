@@ -31,10 +31,15 @@ const PokemonImage = ({id}: PokemonImageProps) => {
     const pixelRows: number[] = getRandomPixelRows(id);
 
     console.log(`For Pokemon ID ${id}, using pixel rows: ${pixelRows}`)
+    const positionString = `100% ${pixelRows[0]*1.0869565217}%`
 
-    return (<Image id="pokemon-image" src={imageUrl} alt="random pokemon" width={960} height={960} style={{
+    return (<Image id="pokemon-image" src={imageUrl} alt="random pokemon" width={960} height={40} style={{
         imageRendering: "pixelated",
-        clipPath: `inset(${10 * pixelRows[0]}px 0px ${10 * (95 - pixelRows[3])}px 0px)`
+        objectFit: "cover",
+        objectPosition: positionString,
+        margin: "0px", 
+        padding: "0px",
+        display: "block",
     }}/>)
 };
 
