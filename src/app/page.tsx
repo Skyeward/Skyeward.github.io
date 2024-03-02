@@ -12,15 +12,13 @@ import PokemonCollage from "./components/PokemonCollage";
 export default function Home() {
   const [randomSpeciesIds, setRandomSpeciesIds] = useState<number[]>([-1]);
 
-  useEffect(() => {
-    console.log("setting random species ids...");
-    setRandomSpeciesIds(getRandomSpeciesIds(8, [true, false, true, false, false, false, false, false, false]));
-    console.log(`random ids set! ${randomSpeciesIds}`)
-  }, [])
+  const generateNewPuzzle = (numberOfPokemon: number, generationsToInclude: boolean[]) => {
+    setRandomSpeciesIds(getRandomSpeciesIds(numberOfPokemon, generationsToInclude));
+  } ;
   
   return (
     <>
-      <GenerationInputComponent/>
+      <GenerationInputComponent generateNewPuzzle={generateNewPuzzle}/>
       <PokemonCollage randomIds={randomSpeciesIds} />
       <AnswerSubmission/>
     </>
