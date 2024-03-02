@@ -13,7 +13,7 @@ export default function Home() {
 
   useEffect(() => {
     console.log("setting random species ids...");
-    setRandomSpeciesIds(getRandomSpeciesIds(8, [2, 4]));
+    setRandomSpeciesIds(getRandomSpeciesIds(8, [true, false, true, false, false, false, false, false, false]));
     console.log(`random ids set! ${randomSpeciesIds}`)
   }, [])
   

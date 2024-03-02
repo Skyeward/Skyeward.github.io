@@ -3,7 +3,7 @@ const lastIdPerGen: number[] = [
 ];
 
 
-export const getRandomSpeciesIds = (idCount: number, gensIncluded: number[]): number[] => {
+export const getRandomSpeciesIds = (idCount: number, gensIncluded: boolean[]): number[] => {
     console.log(`getting random species ids with count of ${idCount}, for gens ${gensIncluded}`);
     
     if (idCount < 1 || idCount > 32 || gensIncluded.length < 1)
@@ -17,12 +17,12 @@ export const getRandomSpeciesIds = (idCount: number, gensIncluded: number[]): nu
 }
 
 
-const getPossibleIds = (gensIncluded: number[]): number[] => {
+const getPossibleIds = (gensIncluded: boolean[]): number[] => {
     const possibleIds: number[] = [];
     
     for (let gen: number = 1; gen < lastIdPerGen.length; gen++)
     {
-        if (!gensIncluded.includes(gen))
+        if (!gensIncluded[gen - 1])
         {
             continue;
         }
