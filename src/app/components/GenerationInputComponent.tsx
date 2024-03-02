@@ -1,7 +1,11 @@
 import GenerationCheckbox from "./GenerationCheckbox";
 import { useState } from "react";
 
-const GenerationInputComponent = () => {
+type GenerationInputComponentProps = {
+    generateNewPuzzle: (numberOfPokemon: number, gensToInclude: boolean[]) => void
+}
+
+const GenerationInputComponent = ({generateNewPuzzle}: GenerationInputComponentProps) => {
     const generations: number[] = [];
     const includeArray: boolean[] = [];
     for (let i = 1; i < 10; i++) {
@@ -17,9 +21,10 @@ const GenerationInputComponent = () => {
         setGenerationsToInclude(newIncludeArray);
     }
 
-    const generateNewPuzzle = () => {
+    const onClickGenerateNewPuzzle = () => {
         console.log("Generating new puzzle and including generations: ");
         console.log(generationsToInclude);
+        generateNewPuzzle(8, generationsToInclude);
     }
 
     return (
@@ -32,7 +37,7 @@ const GenerationInputComponent = () => {
                     </div>);
                 })}
             </div>
-            <button onClick={generateNewPuzzle}>New puzzle!</button>
+            <button onClick={onClickGenerateNewPuzzle}>New puzzle!</button>
         </>
     );
 }
